@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c622bcg7fauyd" path="res://script/player.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://cppfmibg7qn6y" path="res://assets/Player.png" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://df3glfkm1ba26" path="res://assets/Soft White Radial Glow.png" id="3_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://bhcnh78sy0qa8" path="res://assets/map.png" id="3_h2yge"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lswn8"]
 atlas = ExtResource("2_1bvp3")
@@ -324,11 +326,26 @@ animations = [{
 [node name="main" type="Node2D" unique_id=1796045324]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=664959940]
+z_index = 3
+position = Vector2(-611, -285)
 script = ExtResource("1_h2yge")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1318278748]
 position = Vector2(612.5, 298.5)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_sucsc")
-animation = &"walk_up"
-frame_progress = 0.6349925
+animation = &"walk_right"
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1500063883]
+position = Vector2(616, 275)
+
+[node name="PointLight2D" type="PointLight2D" parent="Player" unique_id=2117025780]
+position = Vector2(621, 279)
+color = Color(0.9063212, 0.7648543, 0.33580163, 1)
+texture = ExtResource("3_1bvp3")
+texture_scale = 0.8
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1008391815]
+position = Vector2(64, -1201)
+scale = Vector2(8, 8)
+texture = ExtResource("3_h2yge")
