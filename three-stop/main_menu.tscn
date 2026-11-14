@@ -26,3 +26,6 @@ layout_mode = 2
 
 [node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=794059956]
 layout_mode = 2
+
+[node name="SettingsButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1986961453]
+layout_mode = 2
