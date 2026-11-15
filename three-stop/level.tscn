@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d4kpqly06e4jw"]
+
+[ext_resource type="PackedScene" uid="uid://lagu0p3t0ttq" path="res://monster.tscn" id="1_u52ul"]
+
+[node name="level" type="Node2D" unique_id=1806813490]
+
+[node name="Monster" parent="." unique_id=1903667107 instance=ExtResource("1_u52ul")]
+
+[node name="PatrolPoints" type="Node2D" parent="." unique_id=936808879]
+
+[node name="Marker2D" type="Marker2D" parent="PatrolPoints" unique_id=306599047]
+
+[node name="Marker2D2" type="Marker2D" parent="PatrolPoints" unique_id=495045756]
+
+[node name="Marker2D3" type="Marker2D" parent="PatrolPoints" unique_id=1256761583]
+
+[node name="Marker2D4" type="Marker2D" parent="PatrolPoints" unique_id=1794334196]
+position = Vector2(254, 6)
