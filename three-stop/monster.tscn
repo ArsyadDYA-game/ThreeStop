@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://em7cw2v5usbg" path="res://assets/mon.png" id="1_s3gyj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sucsc"]
-size = Vector2(20, 47)
+size = Vector2(20, 29.25)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u52ul"]
 radius = 215.4055
@@ -17,7 +17,7 @@ script = ExtResource("1_mrqeg")
 texture = ExtResource("1_s3gyj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1516624263]
-position = Vector2(1, 1)
+position = Vector2(3, 9.875)
 shape = SubResource("RectangleShape2D_sucsc")
 
 [node name="DetectionArea" type="Area2D" parent="." unique_id=329507006]
