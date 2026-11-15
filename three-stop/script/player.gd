@@ -39,3 +39,13 @@ func play_animation(prefix: String, dir: Vector2) -> void:
 		animated_sprite_2d.play(prefix + "_up")
 	elif dir.y > 0:
 		animated_sprite_2d.play(prefix + "_down")
+		
+		
+@onready var speech = $SpeechBubble
+
+func _ready():
+	speech.visible = false
+
+func _input(event):
+	if event.is_action_pressed("ui_accept"):
+		speech.say("Where am I?")
