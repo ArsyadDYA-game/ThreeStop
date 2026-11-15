@@ -13,33 +13,93 @@ script = ExtResource("1_nm7lk")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1796893687]
 layout_mode = 0
+offset_right = 1147.0
+offset_bottom = 651.0
+
+[node name="Clip" type="Control" parent="." unique_id=1346995472]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CreditsContent" type="Control" parent="Clip" unique_id=1808304835]
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1681416642]
+[node name="VBoxContainer" type="VBoxContainer" parent="Clip/CreditsContent" unique_id=765199105]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 407.0
+offset_top = -201.0
+offset_right = 750.0
+offset_bottom = 620.0
+size_flags_vertical = 3
+alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=144908563]
+[node name="GameName" type="Label" parent="Clip/CreditsContent/VBoxContainer" unique_id=418619176]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Three Stop
 
-[node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1720338285]
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Developer" type="Label" parent="Clip/CreditsContent/VBoxContainer" unique_id=857216399]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "DeveloperGame
+Saladien KhairiSepang
+Vinsent
+Arsyad Aryanda
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="GameName" type="Button" parent="CenterContainer/VBoxContainer" unique_id=244749166]
+[node name="Programmer" type="Label" parent="Clip/CreditsContent/VBoxContainer" unique_id=1417415863]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Programmer
+Saladien KhairiSepang
+ArsyadAryanda
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Devoloper" type="Button" parent="CenterContainer/VBoxContainer" unique_id=329087105]
+[node name="Artist" type="Label" parent="Clip/CreditsContent/VBoxContainer" unique_id=1948373578]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Artist
+Vinsent
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Programmer" type="Button" parent="CenterContainer/VBoxContainer" unique_id=757711252]
+[node name="Thanks" type="Label" parent="Clip/CreditsContent/VBoxContainer" unique_id=175462879]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "ENJOY THE GAME"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Artist" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1550799676]
+[node name="ButtomSpacer" type="Control" parent="Clip/CreditsContent/VBoxContainer" unique_id=480175381]
 layout_mode = 2
+size_flags_vertical = 3
 
-[node name="BackButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1316188658]
-layout_mode = 2
-
-[connection signal="pressed" from="CenterContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[node name="Quit_Button" type="Button" parent="." unique_id=47741517]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 45.0
+offset_right = 187.0
+offset_bottom = 76.0
+scale = Vector2(2.315251, 2.2617278)
+text = "X"

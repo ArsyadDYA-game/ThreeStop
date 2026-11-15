@@ -4,6 +4,11 @@
 [ext_resource type="Script" uid="uid://dmm1y3gfr7ow3" path="res://player_3d.gd" id="1_dt0uf"]
 [ext_resource type="Texture2D" uid="uid://cq0o12qrr0ydb" path="res://assets/broken_brick_wall_diff_4k.jpg" id="2_640hp"]
 [ext_resource type="Texture2D" uid="uid://dimodv8r4ph68" path="res://assets/old_wooden_floor_03_diff_4k.jpg" id="3_4jwgu"]
+[ext_resource type="Script" uid="uid://dlwqqxdomf8rv" path="res://spike_spawner.gd" id="5_640hp"]
+[ext_resource type="PackedScene" uid="uid://doan4wqg6xb2g" path="res://spike2d.tscn" id="6_4jwgu"]
+[ext_resource type="Script" uid="uid://b8wagaxba8bxn" path="res://key.gd" id="7_uhqsx"]
+[ext_resource type="Script" uid="uid://vl7o130b3wky" path="res://exit_door.gd" id="8_u8of2"]
+[ext_resource type="Texture2D" uid="uid://bj0we413cwmvr" path="res://assets/images__5_-removebg-preview.png" id="8_vwadp"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5bdln"]
 size = Vector3(35.2782, 0.2, 35.108154)
@@ -75,6 +80,15 @@ size = Vector3(35, 0.2, 35)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nmd57"]
 radius = 0.4
 height = 1.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uhqsx"]
+size = Vector3(1.9077148, 1.7813721, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vwadp"]
+size = Vector3(1, 2.9864502, 1.802887)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u8of2"]
+size = Vector3(1.1923828, 2.8696594, 2.0821533)
 
 [node name="3Dgame" type="Node3D" unique_id=969464960]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0021882057)
@@ -183,7 +197,7 @@ light_energy = 0.12
 light_specular = 1.09
 
 [node name="Player3D" type="CharacterBody3D" parent="." unique_id=1014483284]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.24815, 0, 15.507166)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.883953, 0, -12.632452)
 script = ExtResource("1_dt0uf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player3D" unique_id=745997737]
@@ -194,3 +208,43 @@ shape = SubResource("CapsuleShape3D_nmd57")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player3D/Head" unique_id=1239221337]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player3D" unique_id=2036186902]
+
+[node name="ColorRect" type="ColorRect" parent="Player3D/CanvasLayer" unique_id=1856644787]
+offset_right = 1153.0
+offset_bottom = 650.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="SpikeSpawner" type="Node3D" parent="." unique_id=1067776032 node_paths=PackedStringArray("player")]
+script = ExtResource("5_640hp")
+spike_scene = ExtResource("6_4jwgu")
+player = NodePath("../Player3D")
+
+[node name="Key" type="Area3D" parent="." unique_id=1537343540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.163226, 1.6976491, -17.206318)
+script = ExtResource("7_uhqsx")
+
+[node name="Sprite3D" type="Sprite3D" parent="Key" unique_id=2112619842]
+transform = Transform3D(0.18799701, 0, 0, 0, 0.13398343, 0, 0, 0, 1, -0.45004845, -0.041124225, -0.12060547)
+texture = ExtResource("8_vwadp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Key" unique_id=50815787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45385742, -0.13811529, -0.4135971)
+shape = SubResource("BoxShape3D_uhqsx")
+
+[node name="ExitDoor" type="Area3D" parent="." unique_id=1105773237]
+script = ExtResource("8_u8of2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ExitDoor" unique_id=89592979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.838163, 1.3116837, -16.566895)
+mesh = SubResource("BoxMesh_vwadp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitDoor" unique_id=1825378832]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.68302, 1.5137655, -16.550428)
+shape = SubResource("BoxShape3D_u8of2")
+
+[node name="Label3D" type="Label3D" parent="ExitDoor" unique_id=1269902347]
+transform = Transform3D(-2.4306896e-08, 0, -2.2596803, 0, 1.0340564, 0, -0.556077, 0, 9.877376e-08, -17.012856, 1.524603, -16.500948)
+text = "PRESS E TO LEAVE"

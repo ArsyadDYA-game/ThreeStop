@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c3cymxxvx54pr"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5bdln"]
+top_radius = 0.0
+height = 1.5
+
+[node name="Node3D" type="Node3D" unique_id=786069055]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1919019299]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=2064866235]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 1.7868842, 0)
+mesh = SubResource("CylinderMesh_5bdln")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1437586302]
