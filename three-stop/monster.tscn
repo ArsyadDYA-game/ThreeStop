@@ -1,3 +1,22 @@
 [gd_scene format=3 uid="uid://lagu0p3t0ttq"]
 
+[ext_resource type="Script" uid="uid://bgq2vie65h8rm" path="res://monster.gd" id="1_mrqeg"]
+[ext_resource type="Texture2D" uid="uid://em7cw2v5usbg" path="res://assets/mon.png" id="1_s3gyj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sucsc"]
+size = Vector2(20, 47)
+
 [node name="Monster" type="CharacterBody2D" unique_id=1903667107]
+script = ExtResource("1_mrqeg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1002816205]
+texture = ExtResource("1_s3gyj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1516624263]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_sucsc")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=329507006]
+position = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=68885264]
