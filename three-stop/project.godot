@@ -11,7 +11,11 @@ config_version=5
 [application]
 
 config/name="ThreeStop"
+<<<<<<< Updated upstream
 run/main_scene="uid://bppdchl4set68"
+=======
+run/main_scene="uid://cgn82dlm4k48m"
+>>>>>>> Stashed changes
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
