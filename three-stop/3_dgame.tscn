@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://vl7o130b3wky" path="res://exit_door.gd" id="8_u8of2"]
 [ext_resource type="Texture2D" uid="uid://bj0we413cwmvr" path="res://assets/images__5_-removebg-preview.png" id="8_vwadp"]
 [ext_resource type="Texture2D" uid="uid://cw2hwa1un6ylk" path="res://rough_pine_door_diff_4k.jpg" id="10_qpxev"]
+[ext_resource type="AudioStream" uid="uid://7ntbx8ojfil3" path="res://teh es jatuh.wav" id="11_k0wuu"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5bdln"]
 size = Vector3(35.2782, 0.2, 35.108154)
@@ -254,3 +255,7 @@ shape = SubResource("BoxShape3D_u8of2")
 [node name="Label3D" type="Label3D" parent="ExitDoor" unique_id=1269902347]
 transform = Transform3D(-2.4306896e-08, 0, -2.2596803, 0, 1.0340564, 0, -0.556077, 0, 9.877376e-08, -17.012856, 1.524603, -16.500948)
 text = "PRESS E TO LEAVE"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=107453645]
+stream = ExtResource("11_k0wuu")
+autoplay = true

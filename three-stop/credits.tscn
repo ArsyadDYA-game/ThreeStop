@@ -15,6 +15,7 @@ script = ExtResource("1_nm7lk")
 layout_mode = 0
 offset_right = 1147.0
 offset_bottom = 651.0
+color = Color(0.86485785, 0.38672894, 0.06968033, 1)
 
 [node name="Clip" type="Control" parent="." unique_id=1346995472]
 clip_contents = true
