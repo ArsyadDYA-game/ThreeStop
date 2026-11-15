@@ -871,6 +871,9 @@ animations = [{
 radius = 21.0
 height = 80.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bdln"]
+size = Vector2(184, 183)
+
 [node name="segment1" type="Node2D" unique_id=2053397516]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=639862962]
@@ -898,3 +901,13 @@ position = Vector2(-2, -10)
 shape = SubResource("CapsuleShape2D_htm78")
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=884921401]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=350958569]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=1963408351]
+
+[node name="Area2D" type="Area2D" parent="Node2D" unique_id=1091145341]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D" unique_id=894660808]
+position = Vector2(-1442, -993.5)
+shape = SubResource("RectangleShape2D_5bdln")

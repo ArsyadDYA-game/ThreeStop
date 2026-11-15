@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://btgf7qo4rncia"]
 
 [ext_resource type="Script" uid="uid://dcvtq28bdlo86" path="res://main_menu.gd" id="1_06t4h"]
-
-[sub_resource type="FontVariation" id="FontVariation_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://danw43sl7gwoc" path="res://WhatsApp Image 2026-11-14 at 20.12.50.jpeg" id="2_7vrkn"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_nmd57"]
 
@@ -13,7 +12,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1, 1.0477059)
 script = ExtResource("1_06t4h")
+
+[node name="WhatsAppImage20261114At20_12_50" type="Sprite2D" parent="." unique_id=156289324]
+position = Vector2(576.00006, 272.97736)
+scale = Vector2(0.8848063, 0.7349893)
+texture = ExtResource("2_7vrkn")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1164296249]
 layout_mode = 0
@@ -27,22 +32,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -577.0
-offset_top = -318.0
-offset_right = 577.0
-offset_bottom = 320.0
+offset_left = -1114.0
+offset_top = -407.03857
+offset_right = 40.0
+offset_bottom = 230.96143
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.2734567, 1.2430516)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=129748964]
 layout_mode = 2
-
-[node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=578641084]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_fu7sn")
-theme_override_font_sizes/font_size = 54
-text = "Three Stop"
 
 [node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=794059956]
 layout_mode = 2

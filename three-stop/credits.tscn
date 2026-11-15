@@ -103,3 +103,5 @@ offset_right = 187.0
 offset_bottom = 76.0
 scale = Vector2(2.315251, 2.2617278)
 text = "X"
+
+[connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]

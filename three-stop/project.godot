@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="ThreeStop"
-run/main_scene="uid://bl1uxm7k7fw1k"
+run/main_scene="uid://btgf7qo4rncia"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SceneTransition="*uid://2femiwvv628p"
 
 [display]
 
