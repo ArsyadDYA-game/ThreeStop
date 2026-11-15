@@ -42,13 +42,26 @@ func chase_player():
 	)
 
 	velocity = direction * chase_speed
+	
+func can_see_player() -> bool:
+	if player == null:
+		return false
+
+	var direction = player.global_position - global_position
+
+	$VisionRay.target_position = direction
+	$VisionRay.force_raycast_update()
+	if $VisionRay.is_colliding():
+		return $VisionRay.get_collider() == player
+
+	return false
 
 
 func _on_detection_area_body_entered(body):
 	if body.is_in_group("player"):
 		player = body
 
-	if current_state == State.PATROL:
+	if current_state == State.PATROL and can_see_player():
 		start_alert()
 
 
