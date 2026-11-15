@@ -12,8 +12,13 @@ config_version=5
 
 config/name="ThreeStop"
 run/main_scene="uid://btgf7qo4rncia"
+<<<<<<< Updated upstream
 config/features=PackedStringArray("4.7", "GL Compatibility")
+=======
+config/features=PackedStringArray("4.7")
+>>>>>>> Stashed changes
 config/icon="res://icon.svg"
+>>>>>>>Stashedchangesconfig/features=PackedStringArray("4.7", "GL Compatibility")
 
 [autoload]
 
