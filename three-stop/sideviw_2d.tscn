@@ -871,6 +871,29 @@ animations = [{
 radius = 21.0
 height = 80.0
 
+[sub_resource type="GDScript" id="GDScript_5vw27"]
+script/source = "
+extends Area2D
+
+var player_near := false
+
+func _ready():
+	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
+
+func _on_body_entered(body):
+	if body.name == \"player\":
+		player_near = true
+
+func _on_body_exited(body):
+	if body.name == \"player\":
+		player_near = false
+
+func _process(_delta):
+	if player_near and Input.is_action_just_pressed(\"interact\"):
+		SceneTransition.change_scene(\"res://main.tscn\")
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bdln"]
 size = Vector2(184, 183)
 
@@ -904,6 +927,7 @@ shape = SubResource("CapsuleShape2D_htm78")
 [node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=1963408351]
 
 [node name="Area2D" type="Area2D" parent="Node2D" unique_id=1091145341]
+script = SubResource("GDScript_5vw27")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D" unique_id=894660808]
 position = Vector2(-1442, -993.5)
